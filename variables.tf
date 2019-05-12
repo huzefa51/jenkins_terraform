@@ -33,16 +33,6 @@ variable "jnlp_port" {
   default     = 49187
 }
 
-# variable "ssh_key_name" {
-#   description = "The name of an EC2 Key Pair that can be used to SSH to the EC2 Instances in this cluster. Set to an empty string to not associate a Key Pair."
-#   #default     = ""
-# }
-
-# variable "ssh_key_path" {
-#   description = "The path of an EC2 Key Pair that can be used to SSH to the EC2 Instances in this cluster. Used for provisioning."
-# #   default     = ""
-# }
-
 variable "plugins" {
   type        = "list"
   description = "A list of Jenkins plugins to install, use short names."

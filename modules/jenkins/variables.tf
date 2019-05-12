@@ -25,22 +25,6 @@ variable "subnet_ids" {
   type = "list"
 }
 
-# variable "aws_ssl_certificate_arn" {
-#   description = "Amazon Resource Name for the certificate to be used on the load balancer for HTTPS"
-# }
-
-# variable "dns_zone" {
-#   description = "DNS zone in AWS Route53 to use with the ALB"
-# }
-
-# variable "app_dns_name" {
-#   description = "DNS name within the zone to dynamically point to the ALB"
-# }
-
-# variable "alb_prefix" {
-#   description = "Naming prefix for ALB-related resources"
-# }
-
 variable "user_data" {
   description = "A User Data script to execute while the server is booting."
 }
