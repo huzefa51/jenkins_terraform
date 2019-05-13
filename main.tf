@@ -46,7 +46,7 @@ module "jenkins" {
   allowed_ssh_cidr_blocks     = ["0.0.0.0/0"]
   allowed_inbound_cidr_blocks = ["0.0.0.0/0"]
   subnet_ids                  = "${data.aws_subnet_ids.default.ids}"
-
+}
 data "template_file" "setup_data" {
   template = "${file("./modules/jenkins/setup.tpl")}"
 

@@ -21,14 +21,14 @@ function waitForPasswordFile() {
 
     echo "Password created"
 }
-#Install Jenkins
+{* #Install Jenkins
 sudo yum update –y
 sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins.io/redhat/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
 sudo yum install jenkins -y
 
 sudo service jenkins start
-sudo chkconfig --add jenkins
+sudo chkconfig --add jenkins *}
 
 
 waitForJenkins

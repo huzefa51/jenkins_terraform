@@ -6,27 +6,27 @@ resource "aws_instance" "ec2_jenkins" {
   key_name               = "${var.ssh_key_name}"
   monitoring             = true
   vpc_security_group_ids = ["${module.security_group_rules.jenkins_security_group_id}"]
-  tags                   = "${var.tag}"
+  tags                   = "${var.tags}"
 
-  provisioner "file" {
-    connection  = {
-      user = "ec2-user"
-      private_key = "${file(var.ssh_key_path)}"
-    }
-    content     = "${var.setup_data}"
-    destination = "/tmp/setup.sh"
-  }
+#   provisioner "file" {
+#     connection  = {
+#       user = "ec2-user"
+#       private_key = "${file(var.ssh_key_path)}"
+#     }
+#     content     = "${var.setup_data}"
+#     destination = "/tmp/setup.sh"
+#   }
 
-  provisioner "remote-exec" {
-    connection  = {
-      user = "ec2-user"
-      private_key = "${file(var.ssh_key_path)}"
-    }
-    inline = [
-      "chmod +x /tmp/setup.sh",
-      "sudo /tmp/setup.sh"
-    ]
-  }
+  # provisioner "remote-exec" {
+  #   connection  = {
+  #     user = "ec2-user"
+  #     private_key = "${file(var.ssh_key_path)}"
+  #   }
+  #   inline = [
+  #     "chmod +x /tmp/setup.sh",
+  #     "sudo /tmp/setup.sh"
+  #   ]
+  # }
 }
 
 module "security_group_rules" {
