@@ -33,9 +33,9 @@ variable "setup_data" {
   description = "A User Data script to execute after server has booted to setup jenkins defaults."
 }
 
-variable "ssh_key_name" {
+variable "key_name" {
   description = "The name of an EC2 Key Pair that can be used to SSH to the EC2 Instances in this cluster."
-  default     = ""
+  #default     = ""
 }
 
 variable "ssh_key_path" {

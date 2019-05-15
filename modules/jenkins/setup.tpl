@@ -46,6 +46,7 @@ sudo cp /var/cache/jenkins/war/WEB-INF/jenkins-cli.jar /var/lib/jenkins/jenkins-
 waitForPasswordFile
 
 PASS=$(sudo bash -c "cat /var/lib/jenkins/secrets/initialAdminPassword")
+echo "Jenkins PASS = $PASS"
 
 {* sleep 10
 
@@ -56,10 +57,10 @@ sudo service jenkins restart
 
 waitForJenkins
 
-sleep 10
+sleep 10*}
 
 # INSTALL PLUGINS
 sudo java -jar /var/lib/jenkins/jenkins-cli.jar -s http://localhost:8080 -auth admin:$PASS install-plugin ${plugins}
 
 # RESTART JENKINS TO ACTIVATE PLUGINS
-sudo java -jar /var/lib/jenkins/jenkins-cli.jar -s http://localhost:8080 -auth admin:$PASS restart *}
+sudo java -jar /var/lib/jenkins/jenkins-cli.jar -s http://localhost:8080 -auth admin:$PASS restart

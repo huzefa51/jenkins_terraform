@@ -3,7 +3,7 @@ resource "aws_instance" "ec2_jenkins" {
   ami                    = "${var.ami_id}"
   instance_type          = "${var.instance_type}"
   user_data              = "${var.user_data}"
-  key_name               = "${var.ssh_key_name}"
+  key_name               = "${var.key_name}"
   monitoring             = true
   vpc_security_group_ids = ["${module.security_group_rules.jenkins_security_group_id}"]
   tags                   = "${var.tags}"

@@ -39,9 +39,9 @@ module "jenkins" {
   name                        = "jenkins"
   instance_type               = "${var.instance_type_master}"
   ami_id                      = "${var.ami_id}"
-  user_data                   = ""
+  user_data                   = "${data.template_file.user_data.rendered}"
   setup_data                  = "${data.template_file.setup_data.rendered}"
-
+  key_name                    = "${var.ssh_key_name}"
   http_port                   = "${var.http_port}"
   allowed_ssh_cidr_blocks     = ["0.0.0.0/0"]
   allowed_inbound_cidr_blocks = ["0.0.0.0/0"]
@@ -54,6 +54,9 @@ data "template_file" "setup_data" {
     jnlp_port = "${var.jnlp_port}"
     plugins = "${join(" ", var.plugins)}"
   }
+}
+data "template_file" "user_data" {
+  template = "${file("./modules/jenkins/userdata.tpl")}"
 }
 
 data "aws_vpc" "default" {
