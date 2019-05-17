@@ -48,3 +48,8 @@ variable "tags" {
   default = {
   }
 }
+
+variable "private_subnet_cidr" {
+  description = "CIDR for the private subnet"
+  default = "172.31.96.0/20"
+}

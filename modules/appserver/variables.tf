@@ -1,5 +1,5 @@
 variable "name" {
-  description = "Name for the Jenkins instance"
+  description = "Name for the Webapp instance"
 }
 
 variable "environment" {
@@ -24,6 +24,7 @@ variable "vpc_id" {
 #   description = "Subnets for the load balancer listener to use"
 #   type = "list"
 # }
+
 variable "subnet_id" {
   description = "Subnets for the instance"
   default = ""

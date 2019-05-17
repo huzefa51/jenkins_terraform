@@ -1,4 +1,4 @@
-resource "aws_instance" "ec2_jenkins" {
+resource "aws_instance" "ec2_appserver" {
   count                  = 1
   ami                    = "${var.ami_id}"
   instance_type          = "${var.instance_type}"
@@ -6,10 +6,10 @@ resource "aws_instance" "ec2_jenkins" {
   key_name               = "${var.key_name}"
   monitoring             = true
   vpc_security_group_ids = ["${module.security_group_rules.jenkins_security_group_id}"]
-  #tags                   = "${var.tags}"
   subnet_id              = "${var.subnet_id}"
+  #tags                   = "${var.tags}"
   tags {
-    Name = "Jenkins"
+    Name = "Appserver"
   }
 }
 
