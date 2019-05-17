@@ -12,6 +12,8 @@ sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins.io/redhat/jenkins.
 sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
 sudo yum install java-1.8.0-openjdk-devel -y
 sudo amazon-linux-extras install ansible2
+sudo yum install maven -y
+sudo yum install git -y
 sudo yum install jenkins -y
 
 sudo service jenkins start
