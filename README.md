@@ -1,7 +1,7 @@
 #terraform"# jenkins_terraform" 
 
 #Steps to execute
-<!-- terraform init
+terraform init
 
 terraform plan -out "jenkinsplan"
 It will ask for AWS access, secret key, region 
@@ -25,4 +25,4 @@ var.aws_secret_key
   Enter a value: XXXXX
 
 
-terraform apply "jenkinsplan" -->
+terraform apply "jenkinsplan" 
